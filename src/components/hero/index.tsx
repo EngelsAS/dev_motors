@@ -35,6 +35,7 @@ export const Hero = ({
           priority={true}
           quality={100}
           fill={true}
+          sizes="(min-width: 768px) 100vw"
         />
       </div>
     </main>

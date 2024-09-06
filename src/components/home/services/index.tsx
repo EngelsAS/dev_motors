@@ -17,6 +17,7 @@ export const Services = ({ object }: HomeProps) => {
             alt="Imagem ilustrativa sobre a empresa"
             quality={100}
             fill={true}
+            sizes="(min-width: 768px) 100vw"
             src={object.metadata.about.banner.url}
           />
         </div>
@@ -33,6 +34,7 @@ export const Services = ({ object }: HomeProps) => {
                 alt="Imagem do serviço"
                 quality={100}
                 fill={true}
+                sizes="(min-width: 768px) 100vw"
                 src={service.image.url}
               />
             </div>

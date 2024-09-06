@@ -3,8 +3,13 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import { X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+import { MenuProps } from "@/utils/types/menu.type";
 
-export const Submenu = () => {
+interface SubmenuProps {
+  menu: MenuProps;
+}
+
+export const Submenu = ({ menu }: SubmenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -36,13 +41,11 @@ export const Submenu = () => {
             <X size={54} color="#121212" />
           </button>
         )}
-
-        <li>
-          <Link href="/post/pagina-1">Pagina 1</Link>
-        </li>
-        <li>
-          <Link href="/post/pagina-1">Pagina 1</Link>
-        </li>
+        {menu.objects.map((item, index) => (
+          <li key={index}>
+            <Link href={`/post/${item.slug}`}>{item.title}</Link>
+          </li>
+        ))}
       </ul>
     </section>
   );
