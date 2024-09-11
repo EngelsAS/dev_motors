@@ -8,6 +8,21 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "DevMotors - Sua oficina especializada!",
   description: "Oficina de carros.",
+  keywords: ["oficina", "oficina carros", "carros", "manutenção de carros"],
+  openGraph: {
+    images: [`${process.env.NEXT_PUBLIC_URL}/logo.jpg`],
+    title: "DevMotors - Sua oficina especializada!",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -20,6 +35,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        <p style={{ textAlign: "center", marginTop: 54, marginBottom: 24 }}>
+          Todos os direitos reservados @{`${new Date().getFullYear()}`}
+        </p>
       </body>
     </html>
   );

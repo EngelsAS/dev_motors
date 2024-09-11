@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { Exception } from "sass";
 
 export const getDataHome = async () => {
@@ -60,6 +61,7 @@ export const getItemBySlug = async (itemSlug: string) => {
 
     return res.json();
   } catch (error) {
-    throw new Error("Failed get item by slug.");
+    console.log(error);
+    redirect("/");
   }
 };
